@@ -19,13 +19,13 @@ Search command: `grep -rn "SEARCH WORD" --include=*.py .`
 
 ## Part 2. What the program remembered [S1]
 
-After the restart, what did the program remember? TODO
+After the restart, what did the program remember? 
 
-Which file made that possible? TODO
+Which file made that possible? The file that made it possible is the app.py file
 
 ## Part 3. The interface change [S1]
 
-What did you change in `app.py`? TODO
+What did you change in `app.py`? I changed the test and print to EEE.
 
 Why did no test need to change? TODO
 
