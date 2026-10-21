@@ -10,7 +10,7 @@ Write your prediction before you open any code. Then search. In the last column,
 
 | Action | Search word | My prediction (file) | Files found and what each does |
 |---|---|---|---|
-| Prints "Not yet. Try again." | `Not yet` | TODO | TODO |
+| Prints "Not yet. Try again." | `Not yet` | app.py | TODO |
 | Decides that the second miss shows the answer | `reveal` | TODO | TODO |
 | Saves one attempt | `save_attempt` | TODO | TODO |
 | Refuses the 11th problem | `SetFull` | TODO | TODO |
