@@ -98,6 +98,7 @@ class MemoryBank:
         current = self.members()
         if problem_id in current:
             return
+        # Refused to add new item if memory bank is full
         if len(current) >= MAX_SET_SIZE:
             raise SetFull(f"{self.set_id} already holds {MAX_SET_SIZE} problems")
         self.store.add_member(self.set_id, problem_id)

@@ -1,6 +1,6 @@
 # NOTES: Three Layers
 
-Your name: TODO
+Your name: Ashley Mitchell
 
 Fill each TODO. Write plain, short sentences. Do not delete the headings.
 
@@ -31,24 +31,41 @@ Why did no test need to change? The tests check the program's logic and results,
 
 ## Part 4. The rule in the real library [S2]
 
-The same 10-problem rule exists in the real library. Write the file and the function name. The file is dataman/logic.py, and the function is MemoryBank.add_problem().
+The same 10-problem rule exists in the real library. Write the file and the function name. The file is dataman/logic.py, and the function is add_problem().
+
+Break on purpose: I don't think any tests will fail.
+BUT: If we remove "the stop
 
 ## Part 5. The red test [S2]
+Break on purpose: I don't think any tests will fail.
+BUT: If we remove "the stop at 10" rule, then the Add 11th test will fail
+Actual:
+    def test_eleventh_problem_is_refused():
+    bank = MemoryBank(MemoryStore(),  "set-1")
+    for i in range(1,11):
+        bank.app_problem(f"P{i}")
+>   with pytest.raises(SetFull):
+         ^^^^^^^^^^^^^^^^^^^^^^
+E    Failes: DID NOT RAISE <class 'dataman.logic.SetFull'>
 
 With the rule removed from the library, what did the screen show? The screen showed "Added. Set holds 11." because the program allowed the 11th problem.
 
-With the rule removed, which test failed? The test_eleventh_problem_is_refused test in tests/test_logic.py failed.
+With the rule removed, which test failed? The test_eleventh_problem_is_refused() test in tests/test_logic.py failed.
 
 ## Part 6. The data swap [S2]
 
-A real database would replace which file? A real database would replace dataman/store.py.
+A real database would replace which file? A real database would replace dataman/store.json.
 
-Which file holds the rules and does not change when the database changes? The dataman/logic.py file holds the rules and does not need to change.
+Which file holds the rules and does not change when the database changes? The logic.py file holds the rules and does not need to change.
 
 ## Reflection [S2]
 
-Write 3 to 5 sentences. Pick one layer. Say what you changed in it. Say what stayed the same in the other two layers. I changed the interface layer by changing the retry message in app.py to "EEE -- Try again." I also changed the default storage option in app.py from memory to json. The business logic in dataman/logic.py stayed the same, and the data layer in dataman/store.py stayed the same. The program still follows the same rules, but the saved attempts remain available after restarting.
+Write 3 to 5 sentences. Pick one layer. Say what you changed in it. Say what stayed the same in the other two layers. 
+
+I changed the interface layer by changing the retry message in app.py to "EEE -- Try again." I also changed the default storage option in app.py from memory to json. The business logic in dataman/logic.py stayed the same, and the data layer in dataman/store.py stayed the same. The program still follows the same rules, but the saved attempts remain available after restarting.
 
 ## Beta feedback (optional)
 
-This bonus is a beta test. Which step took longer than its time? What confused you? Write it here. Your answer helps the next class. The search and testing steps took longer than expected because I had to check different files to understand which layer handled each task. It was also a little confusing to understand the difference between the interface, business logic, and data layers.
+This bonus is a beta test. Which step took longer than its time? What confused you? Write it here. Your answer helps the next class. 
+
+The search and testing steps took longer than expected because I had to check different files to understand which layer handled each task. It was also a little confusing to understand the difference between the interface, business logic, and data layers.

@@ -52,7 +52,7 @@ def bank(store):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--store", choices=["memory", "json"], default="memory")
+    parser.add_argument("--store", choices=["memory", "json"], default="json")
     args = parser.parse_args()
     store = JsonFileStore() if args.store == "json" else MemoryStore()
     actions = {"practice": practice, "report": report, "bank": bank}
